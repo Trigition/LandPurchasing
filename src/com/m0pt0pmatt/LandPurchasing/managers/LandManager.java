@@ -12,6 +12,7 @@ import com.m0pt0pmatt.LandPurchasing.LandPurchasing;
 import com.sk89q.worldedit.BlockVector;
 import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.bukkit.selections.Selection;
+import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.domains.DefaultDomain;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.ProtectedCuboidRegion;
@@ -135,7 +136,7 @@ public class LandManager {
 		for (ProtectedRegion r: regions.values()){
 			
 			//if the player owns the plot
-			if (r.isOwner(sender.getName().toLowerCase())){
+			if (r.isOwner((LocalPlayer) sender)){
 				
 				String plotName = r.getId();
 				
